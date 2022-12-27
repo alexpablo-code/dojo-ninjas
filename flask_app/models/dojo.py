@@ -7,7 +7,7 @@ class Dojo:
         self.name = db_data['name']
         self.created_at = db_data['created_at']
         self.updated_at = db_data['updated_at']
-        # We create a list so that later we can add in all the burgers that are associated with a restaurant.
+        # We create a list so that later we can add in all the ninjas that are associated with a restaurant.
         self.ninjas = []
 
     @classmethod

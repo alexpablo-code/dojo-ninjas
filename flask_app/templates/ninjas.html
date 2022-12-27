@@ -27,31 +27,34 @@
         </div>
     </nav>
 
-    <div class="d-flex justify-content-center">
-        <div class="conatainer">
-            <form action="/add-ninja" method="post" class="bg-dark text-light p-2 m-3">
-                <h2 class="text-center text-warning">Add Ninja</h2>
-                <label for="dojo_id">Dojo:</label> <br>
-                <select name="dojo_id" class="form-select">
-                    {% for dojo in all_dojos %}
-                    <option value="{{dojo.id}}">{{dojo.name}}</option>
-                    {% endfor %}
-                </select>
-                <div>
-                    <label for="first_name">First Name:</label>
-                    <input type="text" name="first_name" id="first_name" class="form-control">
-                </div>
-                <div>
-                    <label for="last_name">Last Name:</label>
-                    <input type="text" name="last_name" id="last_name" class="form-control">
-                </div>
-                <div>
-                    <label for="age">Age:</label>
-                    <input type="number" name="age" id="age" class="form-control">
-                </div>
-                <input type="submit" class="btn btn-primary">
+    <div class="">
+        <div class="container">
+            <div class="row">
+                <form action="/add-ninja" method="post" class="bg-dark text-light p-3 m-3 col-4">
+                    <h2 class="text-center text-warning">Add Ninja</h2>
+                    <label for="dojo_id">Dojo:</label> <br>
+                    <select name="dojo_id" class="form-select">
+                        {% for dojo in all_dojos %}
+                        <option value="{{dojo.id}}">{{dojo.name}}</option>
+                        {% endfor %}
+                    </select>
+                    <div>
+                        <label for="first_name">First Name:</label>
+                        <input type="text" name="first_name" id="first_name" class="form-control">
+                    </div>
+                    <div>
+                        <label for="last_name">Last Name:</label>
+                        <input type="text" name="last_name" id="last_name" class="form-control">
+                    </div>
+                    <div>
+                        <label for="age">Age:</label>
+                        <input type="number" name="age" id="age" class="form-control">
+                    </div>
+                    <input type="submit" class="btn btn-primary">
+    
+                </form>
 
-            </form>
+            </div>
 
 
         </div>

@@ -28,20 +28,19 @@ def edit_ninja(ninja_id):
     print("__this is dojo__", ninja.dojo)
     return render_template("edit_ninja.html", ninja=ninja)
 
-@app.route('/update-ninja/<int:ninja_id>/<int:dojo_id>', methods=['POST'])
-def update_ninja(ninja_id, dojo_id):
+@app.route('/update-ninja/<int:ninja_id>', methods=['POST'])
+def update_ninja(ninja_id):
     data = {
         "first_name": request.form['first_name'],
         "last_name": request.form['last_name'],
         "age": request.form['age'],
         "id": ninja_id
     }
-    dojo_data = {
-        "id": dojo_id
-    }
 
+    dojo_id = request.form['dojo_id']
+    
     Ninja.update(data)
-    return render_template("dojo_ninjas.html", dojo=Dojo.get_dojo_with_ninjas(dojo_data))
+    return redirect(f'/dojo-ninjas/{dojo_id}')
 
 
 @app.route('/delete/<int:ninja_id>/<int:dojo_id>')
@@ -50,9 +49,5 @@ def delete(ninja_id, dojo_id):
         "id": ninja_id
     }
     
-    dojo_data ={
-        "id": dojo_id
-    }
-
     Ninja.destroy(data)
-    return render_template("dojo_ninjas.html", dojo=Dojo.get_dojo_with_ninjas(dojo_data))
+    return redirect(f'/dojo-ninjas/{dojo_id}')

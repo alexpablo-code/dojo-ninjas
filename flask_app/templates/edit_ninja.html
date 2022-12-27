@@ -31,7 +31,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-4 offset-1">
-                    <form action="/update-ninja/{{ninja.id}}/{{ninja.dojo.id}}" method="post" class="bg-dark text-light p-2 m-3">
+                    <form action="/update-ninja/{{ninja.id}}" method="post" class="bg-dark text-light p-2 m-3">
                         <h2 class="text-center text-warning">Edit Ninja: {{ninja.first_name}}</h2>
                             <p class="text-info">Dojo:{{ninja.dojo.name}}</p>
                         
@@ -47,6 +47,7 @@
                             <label for="age">Age:</label>
                             <input type="number" name="age" id="age" class="form-control">
                         </div>
+                        <input type="hidden" name="dojo_id" value={{ninja.dojo.id}}>
                         <input type="submit" class="btn btn-primary">
         
                     </form>
